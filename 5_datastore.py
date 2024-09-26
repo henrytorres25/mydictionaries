@@ -47,3 +47,20 @@ datastore = { "medical":[
 
       ]
 }
+
+#the i in the for loop represents each dictionaries
+
+import csv
+outfile = open ('retail_space.csv','w')
+outfile.write("room-number,use,sq-ft,price \n")
+for i in datastore['medical']:
+  #room_number = i['room-number']
+  #use = i["use"]
+  #sq_ft = i["sq-ft"]    
+  #price = i["price"]
+  outfile.write(f"{i['room-number']},{i['use']},{i['sq-ft']},{i['price']} \n")
+
+  outfile.close()
+  
+
+
