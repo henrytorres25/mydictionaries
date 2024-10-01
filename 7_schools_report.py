@@ -50,3 +50,14 @@ for school in schools:
                 print(f"Tuition Cost {tuition:,.2f}")
                 print()
                 print()
+
+
+#Report 3
+
+for school in schools:
+    #print(type(school))
+    conf_number = school["NCAA"]["NAIA conference number football (IC2020)"]
+    #print(conf_number)
+    if conf_number in conferece_schools:
+        off_camp = school["Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)": 63285,
+   "Total price for out-of-state students living off campus (not with family)  2020-21 (DRVIC2020)":]

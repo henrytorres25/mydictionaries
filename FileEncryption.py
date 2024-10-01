@@ -1,6 +1,5 @@
 
-
-infile = open ('encrypted.txt','r')
+infile = open ("info_security-1.txt", "r")
 contents = infile.read()
 encrypted_dict = {
     'A': '9', 'B': '#', 'C': 'x', 'D': '4', 'E': '?', 'F': 'w', 
@@ -14,23 +13,19 @@ encrypted_dict = {
     'w': 'x', 'x': 'j', 'y': '4', 'z': '!'
 }
 
-decrypted_message = ''
+outfile = open('encrypted.txt','w')
 
-inverse_dict = {v:k for k, v in encrypted_dict.items()}
-
-for value in contents:
-    if value in encrypted_dict.values():
-        decrypted_let = inverse_dict[value]
-        decrypted_message += decrypted_let
-    elif value == ' ':
-        decrypted_message += ' '
-    elif value == '.':
-        decrypted_message += '.'
-    elif value == ':':
-        decrypted_message += ':'
+for l in contents:
+    if l in encrypted_dict.keys():
+        encrypted_let = encrypted_dict[l]
+        outfile.write(encrypted_let)
+    elif l == ' ':
+        outfile.write(' ')
+    elif l == '.':
+        outfile.write('.')
+    elif l == ':':
+        outfile.write(':')
     else:
         pass
-
-print(decrypted_message)
 
 infile.close()
